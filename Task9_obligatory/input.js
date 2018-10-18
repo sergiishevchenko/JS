@@ -6,7 +6,11 @@ function showUser(surname, name) {
     alert("Пользователь " + this.surname + " " + this.name + ", его возраст " + age.value);
 }
  
-let sergii = showUser('Shevchenko', 'Sergii');
+let user = {
+    weight: '70'
+};
+
+console.log(showUser.apply(user, ['Shevchenko','Sergii']));
 
 
 
@@ -67,8 +71,8 @@ let sergii = showUser('Shevchenko', 'Sergii');
 // };
 
 // function sayName(surname) {
-// console.log(this);
-// console.log(this.name + surname);
+//     console.log(this);
+//     console.log(this.name + surname);
 // }
 
 // console.log(sayName.call(user, 'Smith'));

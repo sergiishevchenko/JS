@@ -127,22 +127,25 @@ window.addEventListener('DOMContentLoaded', function(){
     });
 
     // Modal - Узнать больше (табы)
+    
+    let btn = document.getElementsByClassName('description-btn'),
+        over = document.querySelector('.overlay'),
+        cross = document.querySelector('.popup-close');
 
-    let more2 = document.querySelector('.description-btn'),
-        overlay2 = document.querySelector('.overlay'),
-        close2 = document.querySelector('.popup-close');
+    for (let i = 0; i < 4; i++) {
+        
+        btn[i].addEventListener('click', function() {
+            over.style.display = 'block';
+            this.classList.add('more-splash');
+            document.body.style.overflow = 'hidden';
+        });
 
-    more2.addEventListener('click', function() {
-        overlay2.style.display = 'block';
-        this.classList.add('more-splash');
-        document.body.style.overflow2 = 'hidden';
-    });
-
-    close2.addEventListener('click', function() {
-        overlay2.style.display = 'none';
-        more2.classList.remove('more-splash');
-        document.body.style.overflow2 = '';
-    });
+        cross.addEventListener('click', function() {
+            over.style.display = 'none';
+            btn.classList.remove('more-splash');
+            document.body.style.overflow = '';
+        });
+    }
 });
 
 
