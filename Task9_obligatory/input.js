@@ -3,14 +3,10 @@ let age = document.getElementById('age');
 function showUser(surname, name) {
     this.surname = surname;
     this.name = name;
-    alert("Пользователь " + this.surname + " " + this.name + ", его возраст " + age.value);
+    alert("Пользователь " + surname + " " + name + ", его возраст " + this.value);
 }
- 
-let user = {
-    weight: '70'
-};
 
-console.log(showUser.apply(user, ['Shevchenko','Sergii']));
+console.log(showUser.apply(age, ['Shevchenko','Sergii']));
 
 
 

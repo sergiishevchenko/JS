@@ -142,7 +142,7 @@ window.addEventListener('DOMContentLoaded', function(){
 
         cross.addEventListener('click', function() {
             over.style.display = 'none';
-            btn.classList.remove('more-splash');
+            btn[i].classList.remove('more-splash');
             document.body.style.overflow = '';
         });
     }
