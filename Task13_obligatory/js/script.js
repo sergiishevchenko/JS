@@ -315,7 +315,8 @@ window.addEventListener('DOMContentLoaded', function(){
 
         totalValue.innerHTML = 0;
 
-        persons.addEventListener('change', function() {
+        persons.addEventListener('input', function() {
+            this.value = this.value.replace(/\D/ig, '');
             personsSum = +this.value;
             total = (daysSum + personsSum)*4000;
 
@@ -326,7 +327,8 @@ window.addEventListener('DOMContentLoaded', function(){
             }
         });
 
-        restDays.addEventListener('change', function() {
+        restDays.addEventListener('input', function() {
+            this.value = this.value.replace(/\D/ig, '');
             daysSum = +this.value;
             total = (daysSum + personsSum)*4000;
 
@@ -337,7 +339,7 @@ window.addEventListener('DOMContentLoaded', function(){
             }
         });
 
-        place.addEventListener('change', function() {
+        place.addEventListener('input', function() {
             if (restDays.value == '' || persons.value == '') {
                 totalValue.innerHTML = 0;
             } else {
@@ -349,10 +351,5 @@ window.addEventListener('DOMContentLoaded', function(){
 
 function checkTel(){
     if (event.keyCode != 43 && event.keyCode < 48 || event.keyCode > 57)
-    event.preventDefault();
-}
-
-function check(){
-    if (event.keyCode < 48 || event.keyCode > 57)
     event.preventDefault();
 }
